@@ -13,8 +13,16 @@ from gtts import gTTS  # Convert text into audio/speech
 import os
 
 
+# python -m spacy download en_core_web_sm
+import subprocess
+import spacy
 
-nlp = spacy.load('en_core_web_sm')  # python -m spacy download en_core_web_sm
+# Ensure the spaCy model is downloaded
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
 
 def tokenize_text(text):
     words = word_tokenize(text)
