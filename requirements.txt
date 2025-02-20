@@ -1,10 +1,7 @@
-streamlit==1.30.0
-nltk==3.8.1
-spacy==3.6.1
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.6.0/en_core_web_sm-3.6.0.tar.gz
-textblob==0.17.1
-pdfplumber==0.10.2
-gtts==2.3.2
-en-core-web-sm==3.6.0
-# Ensure the spaCy model is installed
-#spacy-lookups-data
+streamlit
+nltk
+spacy>=3.6.0,<3.7.0
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.6.0/en_core_web_sm-3.6.0-py3-none-any.whl
+textblob
+pdfplumber
+gtts
