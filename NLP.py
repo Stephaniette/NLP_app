@@ -1,4 +1,3 @@
-
 import streamlit as st  # Create the web-based interactive UI
 import nltk  # Provides tokenization of words and sentences
 # Downloading required nltk files
@@ -12,9 +11,19 @@ import pdfplumber  # Extract text from PDF documents
 from gtts import gTTS  # Convert text into audio/speech
 import os
 
-# python -m spacy download en_core_web_sm
-# Load spaCy model - no try/except needed if requirements.txt is set up correctly
-nlp = spacy.load("en_core_web_sm")
+
+
+#nlp = spacy.load('en_core_web_sm')  # python -m spacy download en_core_web_sm
+import subprocess
+import spacy
+
+# Ensure the spaCy model is downloaded
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
+
 
 def tokenize_text(text):
     words = word_tokenize(text)
