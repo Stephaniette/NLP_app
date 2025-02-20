@@ -1,8 +1,6 @@
 streamlit
 nltk
-stopwords
 spacy
 TextBlob
 pdfplumber
-gTTS
-os
+gtts
