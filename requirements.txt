@@ -1,7 +1,5 @@
 streamlit
 nltk
-word_tokenize
-sent_tokenize
 stopwords
 spacy
 TextBlob
