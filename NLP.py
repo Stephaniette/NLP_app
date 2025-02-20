@@ -1,4 +1,12 @@
+import streamlit as st
+import os
+import sys
 
+# Add this at the beginning of your script
+if not os.path.exists(os.path.join(os.path.dirname(sys.executable), "en_core_web_sm")):
+    st.info("Downloading language model for the first time... This may take a while.")
+    os.system("python -m spacy download en_core_web_sm")
+    st.experimental_rerun()
 import streamlit as st  # Create the web-based interactive UI
 import nltk  # Provides tokenization of words and sentences
 # Downloading required nltk files
